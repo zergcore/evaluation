@@ -16,8 +16,8 @@ use App\Http\Controllers\EvaluationController;
 
 //Route::get('/', HomeController::class);
 
-Route::get('/', [EvaluationController::class, 'index'])->name('evaluations.index');
+Route::get('evaluations/', [EvaluationController::class, 'index'])->name('evaluations.index');
 
-Route::get('evaluations/create', [EvaluationController::class, 'create'])->name('evaluations.create');
+Route::get('/', [EvaluationController::class, 'create'])->name('evaluations.create');
 
 Route::get('evaluations/{id}', [EvaluationController::class, 'show'])->name('evaluations.show');
