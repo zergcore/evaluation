@@ -27,3 +27,5 @@ Route::post('evaluations', [EvaluationController::class, 'store'])->name('evalua
 Route::get('evaluations/{evaluation}/edit', [EvaluationController::class, 'edit'])->name('evaluations.edit');
 
 Route::put('evaluations/{evaluation}',[EvaluationController::class, 'update'])->name('evaluations.update');
+
+Route::delete('evaluations/{evaluation}', [EvaluationController::class, 'destroy'])->name('evaluations.destroy');

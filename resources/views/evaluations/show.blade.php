@@ -3,6 +3,11 @@
 @section('content')
 <h5><a href="{{route('evaluations.index')}}">Volver a evaluaciones</a></h5>
 <h5><a href="{{route('evaluations.edit', $evaluation)}}">Editar evaluacion</a></h5>
+<form action="{{route('evaluations.destroy', $evaluation)}}" method="POST">
+  @csrf
+  @method('delete')
+  <button type="submit">Eliminar evaluacion</button>
+</form>
 
 <div class="container">
   <h1><b>Nombre: {{$evaluation->name}}</b> </h1>

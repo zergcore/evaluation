@@ -49,4 +49,9 @@ class EvaluationController extends Controller
 
         return redirect()->route('evaluations.show', $evaluation);
     }
+
+    public function destroy(Evaluation $evaluation){
+        $evaluation->delete();
+        return redirect()->route('evaluations.index');
+    }
 }
