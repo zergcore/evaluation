@@ -2,10 +2,15 @@
 @section('title','Evaluaciones')
 @section('content')
     <h1><b></b></h1>
+
     <h5><a href="{{route('evaluations.index')}}">Volver a evaluaciones</a></h5>
-    <form>
+
+    <form action="{{route('evaluations.store')}}" method="POST">
+
+      @csrf
+
       <div class="container">
-        <div class="card">
+        <div class="card" id="ce">
           <div class="card-header">
             <h5 class="card-title" style="text-align: center;">Nueva evaluación</h5>
           </div>
@@ -19,7 +24,10 @@
               <span class="fa fa-star" onclick="qualify(this)" style="cursor: pointer;" id="5stars"></span>
               <br><br>
             </div>
-  
+
+            <div class="input-group mb-3">
+              <input type="text" class="rate form-control" aria-label="rate" aria-describedby="basic-addon2" name="rate" id="rate">
+            </div>
             <div class="input-group mb-3">
               <input type="text" class="form-control" placeholder="Su nombre" aria-label="name" aria-describedby="basic-addon2" name="name">
             </div>
@@ -32,16 +40,11 @@
           </div>
   
           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <a href="#" class="btn btn-secondary" >GRAVAR</a>
+            <button class="btn btn-secondary" type="submit">GRAVAR</button>
           </div>
         </div>
         
       </div>
     </form>
-      
-
-
-
-
 
 @endsection

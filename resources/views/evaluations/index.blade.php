@@ -41,14 +41,14 @@
                             <td>{{$evaluation->created_at->diffForHumans()}}</td>
                             <td><a href="{{route('evaluations.show' , $evaluation->id)}}">{{$evaluation ->name}}</a></td>
                             <td>
-                                <div class="col-12" style="text-align: center;">
-                                <span class="fa fa-star" onclick="show(this, {{$evaluation->stars}})" style="" id="1stars"></span>
-                                <span class="fa fa-star" onclick="show(this, {{$evaluation->stars}})" style="" id="2stars"></span>
-                                <span class="fa fa-star" onclick="show(this, {{$evaluation->stars}})" style="" id="3stars"></span>
-                                <span class="fa fa-star" onclick="show(this, {{$evaluation->stars}})" style="" id="4stars"></span>
-                                <span class="fa fa-star" onclick="show(this, {{$evaluation->stars}})" style="" id="5stars"></span>
-                                <br><br>
-                              </div>
+                                <div class="col-12" style="">
+                                    <span class="fa fa-star" onclick="show(this, {{$evaluation->stars}})" style="" id="1{{$evaluation->name}}"></span>
+                                    <span class="fa fa-star" onclick="show(this, {{$evaluation->stars}})" style="" id="2{{$evaluation->name}}"></span>
+                                    <span class="fa fa-star" onclick="show(this, {{$evaluation->stars}})" style="" id="3{{$evaluation->name}}"></span>
+                                    <span class="fa fa-star" onclick="show(this, {{$evaluation->stars}})" style="" id="4{{$evaluation->name}}"></span>
+                                    <span class="fa fa-star" onclick="show(this, {{$evaluation->stars}})" style="" id="5{{$evaluation->name}}"></span>
+                                    <br><br>
+                                </div>
                             </td>
                             <td>{{$evaluation->title}}</td>
                             <td>{{$evaluation->description}}</td>

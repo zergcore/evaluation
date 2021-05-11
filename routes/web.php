@@ -20,4 +20,10 @@ Route::get('evaluations/', [EvaluationController::class, 'index'])->name('evalua
 
 Route::get('/', [EvaluationController::class, 'create'])->name('evaluations.create');
 
-Route::get('evaluations/{id}', [EvaluationController::class, 'show'])->name('evaluations.show');
+Route::get('evaluations/{evaluation}', [EvaluationController::class, 'show'])->name('evaluations.show');
+
+Route::post('evaluations', [EvaluationController::class, 'store'])->name('evaluations.store');
+
+Route::get('evaluations/{evaluation}/edit', [EvaluationController::class, 'edit'])->name('evaluations.edit');
+
+Route::put('evaluations/{evaluation}',[EvaluationController::class, 'update'])->name('evaluations.update');

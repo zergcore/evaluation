@@ -41,6 +41,7 @@
             console.log(item)
             count=item.id[0]; //captura el primer caracter
             let n=item.id.substring(1); //4 'estrella captura todo menos el primer caracter'
+            document.getElementById('rate').value=count;
             for (let i=0; i<5; i++){
                 if (i<count){
                     document.getElementById((i+1)+n).style.color="orange";
