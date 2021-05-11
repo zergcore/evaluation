@@ -5,7 +5,7 @@
 
     <h5><a href="{{route('evaluations.index')}}">Volver a evaluaciones</a></h5>
 
-    <form action="{{route('evaluations.update', $evaluation)}}" method="POST">
+    <form action="{{route('evaluations.update', $evaluation)}}" method="POST" name="form">
 
       @csrf
 
@@ -42,7 +42,7 @@
           </div>
   
           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <button class="btn btn-secondary" type="submit">Actualizar</button>
+            <button class="btn btn-secondary" onclick="validate()">Actualizar</button>
           </div>
         </div>
         

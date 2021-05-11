@@ -3,9 +3,9 @@
 @section('content')
     <h1><b></b></h1>
 
-    <h5><a href="{{route('evaluations.index')}}">Volver a evaluaciones</a></h5>
+    <h5><a href="{{route('evaluations.index')}}" class="btn btn-light"><i class="fas fa-chevron-left"></i></a></h5>
 
-    <form action="{{route('evaluations.store')}}" method="POST">
+    <form action="{{route('evaluations.store')}}" method="POST" name='myform'>
 
       @csrf
 
@@ -40,7 +40,7 @@
           </div>
   
           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <button class="btn btn-secondary" type="submit">GRAVAR</button>
+            <button class="btn btn-secondary" onclick="validate()">GRAVAR</button>
           </div>
         </div>
         
