@@ -10,30 +10,6 @@
 @section('content')
     <h1> <b>Evaluaciones</b> <a href="{{route('evaluations.create')}}" class="btn btn-light"><i class="fas fa-plus-square"></i></a></h1>
 
-    {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#contenido-modal">
-        Abrir modal
-    </button> --}}
-
-    {{-- <div class="modal" tabindex="-1" id="contenido-modal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <p>Modal body text goes here.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div> --}}
-
     <div class="container">
         <div class="card">
             <div class="card-body">
@@ -95,14 +71,6 @@
                                             <div class="container">
                                                 <div class="card">
                                                   <div class="card-header">
-                                                    <div class="col-12" style="text-align: center;">
-                                                      <span class="fa fa-star" onclick="show(this, {{$evaluation->stars}})" style="" id="1{{$evaluation->name}}"></span>
-                                                      <span class="fa fa-star" onclick="show(this, {{$evaluation->stars}})" style="" id="2{{$evaluation->name}}"></span>
-                                                      <span class="fa fa-star" onclick="show(this, {{$evaluation->stars}})" style="" id="3{{$evaluation->name}}"></span>
-                                                      <span class="fa fa-star" onclick="show(this, {{$evaluation->stars}})" style="" id="4{{$evaluation->name}}"></span>
-                                                      <span class="fa fa-star" onclick="show(this, {{$evaluation->stars}})" style="" id="5{{$evaluation->name}}"></span>
-                                                      <br><br>
-                                                    </div>
                                                   </div>
                                                   <div class="card-body">
                                                     <blockquote class="blockquote mb-0">
@@ -110,14 +78,14 @@
                                                       <footer class="blockquote-footer">{{$evaluation->description}} <cite title="Source Title"><b> Nombre: </b>{{$evaluation->name}}</cite></footer>
                                                     </blockquote>
                                                   </div>
-                                                  <div class="card-footer text-muted">
+                                                  <div class="card-footer text-muted text-center">
                                                     {{$evaluation->created_at->diffForHumans()}}
                                                   </div>
                                                 </div>
                                               </div>
         
                                         </div>
-                                        
+
                                       </div>
                                     </div>
                                   </div>
