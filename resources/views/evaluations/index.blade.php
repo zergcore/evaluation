@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
 @endsection
 
@@ -13,28 +14,28 @@
     <div class="container">
         <div class="card">
             <div class="card-body">
-                <table class="table table-striped" id="evaluaciones">
+                <table class="table table-striped table-responsive-sm" id="evaluaciones">
                     <thead>
                         <tr>
-                            <th>id</th>
-                            <th>Fecha de creación</th>
-                            <th>Hora de creación</th>
-                            <th>Nombre de la evaluación</th>
-                            <th>Calificación</th>
-                            <th>Titulo</th>
-                            <th>Descripción parcial</th>
-                            <th>Opciones</th>
+                            <th scope="col">id</th>
+                            <th scope="col">Fecha de creación</th>
+                            <th scope="col">Hora de creación</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Calificación</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Opciones</th>
                         </tr>
                     </thead>
             
                     <tbody>
                         @foreach ($evaluations as $evaluation)
                         <tr>
-                            <td>{{$evaluation->id}}</td>
-                            <td>{{$evaluation->created_at->diffForHumans()}}</td>
-                            <td>{{$evaluation->created_at->diffForHumans()}}</td>
-                            <td><a href="{{route('evaluations.show' , $evaluation->id)}}">{{$evaluation ->name}}</a></td>
-                            <td>
+                            <td scope="row" id='ev'>{{$evaluation->id}}</td>
+                            <td id='date'>{{$evaluation->created_at->format('d-m-Y')}}</td>
+                            <td id='hour'>{{$evaluation->created_at->format('h:m A')}}</td>
+                            <td id='n'><a href="{{route('evaluations.show' , $evaluation->id)}}">{{$evaluation ->name}}</a></td>
+                            <td id='st'>
                                 <div class="col-12" style="">
                                     <span class="fa fa-star" onclick="show(this, {{$evaluation->stars}})" style="" id="1{{$evaluation->name}}"></span>
                                     <span class="fa fa-star" onclick="show(this, {{$evaluation->stars}})" style="" id="2{{$evaluation->name}}"></span>
@@ -44,9 +45,9 @@
                                     <br><br>
                                 </div>
                             </td>
-                            <td>{{$evaluation->title}}</td>
-                            <td>{{$evaluation->description}}</td>
-                            <td>
+                            <td id='tt'>{{$evaluation->title}}</td>
+                            <td id='dsc'>{{$evaluation->description}}</td>
+                            <td id='opt'>
                                 <a href="{{route('evaluations.show' , $evaluation->id)}}" class="btn btn-light"><i class="fas fa-search"></i></a>
                                 <form action="{{route('evaluations.destroy', $evaluation)}}" method="POST">
                                     @csrf

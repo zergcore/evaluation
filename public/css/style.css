@@ -1,0 +1,37 @@
+/* table{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+} */
+/* td {
+    width: 100px; 
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+};
+*/
+td#ev{
+    width:5%;
+}
+
+td#st{
+    width: 20% !important;
+}
+
+td#dsc{
+    text-overflow: ellipsis !important;
+    width: 25%;
+    height:100px;
+    overflow:hidden;
+    /* white-space:nowrap; */
+}
+
+td#n, td#tt{
+    text-overflow: ellipsis !important;
+    width: 15%;
+    height:100px;
+    overflow:hidden;
+    /* white-space:nowrap; */
+}
+td#date, td#hour{
+    width: 7.5%;
+}
